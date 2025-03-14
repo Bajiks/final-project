@@ -28,7 +28,7 @@ El proyecto implementa un sistema recomendador que integra herramientas y tecnol
     ├── ...
 ```
 
-# Exportar variables de entorno desde .env
+## Exportar variables de entorno desde .env
 
 set -o allexport && source .env && set +o allexport
 
@@ -45,8 +45,7 @@ Ejecutar desde el directorio recommender_system:
   mlflow ui --backend-store-uri \
   postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST/$MLFLOW_POSTGRES_DB
 
-
-## ejecución de dagster (servidor local)
+## Ejecución de dagster (servidor local)
 
 Ejecutar desde el directorio recommender_system:
 
