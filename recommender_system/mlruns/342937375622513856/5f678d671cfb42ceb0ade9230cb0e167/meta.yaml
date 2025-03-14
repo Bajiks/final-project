@@ -1,0 +1,15 @@
+artifact_uri: file:///home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/mlruns/342937375622513856/5f678d671cfb42ceb0ade9230cb0e167/artifacts
+end_time: 1739163546261
+entry_point_name: ''
+experiment_id: '342937375622513856'
+lifecycle_stage: active
+run_id: 5f678d671cfb42ceb0ade9230cb0e167
+run_name: get_data
+run_uuid: 5f678d671cfb42ceb0ade9230cb0e167
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739163544814
+status: 3
+tags: []
+user_id: bajiks

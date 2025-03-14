@@ -1,0 +1,2 @@
+code_servers:
+  local_startup_timeout: 800  # Increase the timeout to 800 seconds

@@ -1,0 +1,17 @@
+name: Final Proyect RS
+
+python_env: python_env.yaml
+# or
+#conda_env: files/config/conda_environment.yaml
+# or
+# docker_env:
+#    image:  mlflow-docker-example
+
+entry_points:
+  main:
+    command: "python EDA.py"
+  baselines:
+    parameters:
+      #data_file: data_repo_url
+      p: {type: float, default: 0.5}
+    command: "python baselines.py -p {p}"

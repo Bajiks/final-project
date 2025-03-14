@@ -1,0 +1,32 @@
+[project]
+name = "recommender_system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "dagster",
+    "dagster-cloud",
+    "dagster-webserver (>=1.9.11,<2.0.0)",
+    "dagster-mlflow (>=0.25.11,<0.26.0)",
+    "dagster-airbyte (>=0.25.11,<0.26.0)",
+    "dagster-dbt (>=0.25.11,<0.26.0)",
+    "dbt-postgres (>=1.9.0,<2.0.0)",
+]
+
+[project.optional-dependencies]
+dev = [
+    "dagster-webserver", 
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "recommender_system.definitions"
+project_name = "recommender_system"
+
+[tool.setuptools.packages.find]
+exclude=["recommender_system_tests"]

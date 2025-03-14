@@ -1,0 +1,116 @@
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - 275621 - LOGS_CAPTURED - Started capturing logs in process (pid: 275621).
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - 275621 - dbt_sources - STEP_START - Started execution of step "dbt_sources".
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - dbt_sources - A dbt subsetted execution is being performed. Overriding default dbt selection arguments `['--select', 'fqn:*']` with arguments: `['db_postgres.peliculas']`.
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - dbt_sources - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 672, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 364, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/runtime.py", line 79, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/profile.py", line 402, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/profile.py", line 359, in from_raw_profiles
+    raise DbtProjectError("Could not find profile named '{}'".format(profile_name))
+dbt.exceptions.DbtProjectError: Runtime Error
+  Could not find profile named 'db_postgres'
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - dbt_sources - Copying `/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/db_postgres/target/partial_parse.msgpack` to `/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/db_postgres/target/dbt_sources-02ca73f-3c4a59e/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-02-13 02:03:08 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - dbt_sources - Running dbt command: `dbt run --select db_postgres.peliculas`.
+[32m2025-02-13 02:09:24 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 02ca73ff-15a0-4ec5-a1db-2d93719a98d5 - 275621 - dbt_sources - STEP_FAILURE - Execution of step "dbt_sources" failed.
+
+dagster._core.errors.DagsterExecutionInterruptedError
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_plan.py", line 245, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 501, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 184, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 190, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 159, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/assets/dbt/dbt_assets.py", line 11, in dbt_sources
+    yield from dbt.cli(["run"], context=context).stream()
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 203, in __next__
+    return next(self._inner_iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 275, in _stream_asset_events
+    for event in self.stream_raw_events():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 328, in stream_raw_events
+    for raw_event in self._stdout or self._stream_stdout():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 434, in _stream_stdout
+    logger.info(f"Forwarding interrupt signal to dbt command: `{self.dbt_command}`.")
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1539, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/log_manager.py", line 268, in emit
+    handler.handle(dagster_record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/instance/__init__.py", line 260, in emit
+    self._instance.handle_new_event(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/instance/__init__.py", line 2451, in handle_new_event
+    self._event_storage.store_event(events[0])
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/storage/event_log/sqlite/sqlite_event_log.py", line 254, in store_event
+    insert_event_statement = self.prepare_insert_event(event)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/storage/event_log/sql_event_log.py", line 193, in prepare_insert_event
+    return SqlEventLogStorageTable.insert().values(**self._event_to_row(event))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in values
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 279, in _generative
+    x = fn(self, *args, **kw)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in values
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 312, in check
+    return fn(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/dml.py", line 1171, in values
+    coerced_arg = dict(kv_generator(self, arg.items(), True))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/dml.py", line 196, in _get_crud_kv_pairs
+    else coercions.expect(
+         ^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 763, in _literal_coercion
+    return elements.BindParameter(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 1981, in __init__
+    self.key = _anonymous_label.safe_construct(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 5486, in safe_construct
+    body = body.strip("_")
+           ^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/interrupts.py", line 83, in _new_signal_handler
+    raise error_cls()
+
+The above exception occurred during handling of the following exception:
+dagster._core.errors.DagsterExecutionInterruptedError
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 418, in _stream_stdout
+    for raw_line in self.process.stdout or []:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/interrupts.py", line 83, in _new_signal_handler
+    raise error_cls()
+[0m

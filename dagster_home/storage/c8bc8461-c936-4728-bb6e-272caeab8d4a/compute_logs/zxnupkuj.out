@@ -1,0 +1,20 @@
+Running with dbt=1.9.2
+Registered adapter: postgres=1.9.0
+Found 4 models, 3 sources, 433 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 4 START sql table model target.peliculas .................................. [RUN]
+1 of 4 OK created sql table model target.peliculas ............................. [[32mSELECT 1344[0m in 0.14s]
+2 of 4 START sql table model target.scores ..................................... [RUN]
+2 of 4 OK created sql table model target.scores ................................ [[32mSELECT 25000[0m in 0.09s]
+3 of 4 START sql table model target.usuarios ................................... [RUN]
+3 of 4 OK created sql table model target.usuarios .............................. [[32mSELECT 377[0m in 0.07s]
+4 of 4 START sql table model target.scores_users_movies ........................ [RUN]
+4 of 4 OK created sql table model target.scores_users_movies ................... [[32mSELECT 25000[0m in 0.12s]
+
+Finished running 4 table models in 0 hours 0 minutes and 0.59 seconds (0.59s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4

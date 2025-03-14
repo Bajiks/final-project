@@ -1,0 +1,37 @@
+[32m2025-02-10 10:18:07 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - 133086 - LOGS_CAPTURED - Started capturing logs in process (pid: 133086).
+[32m2025-02-10 10:18:07 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - 133086 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - STEP_START - Started execution of step "airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24".
+[32m2025-02-10 10:18:19 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - Request to Airbyte API failed: 409 Client Error: Conflict for url: http://localhost:8000/api/v1/connections/sync[0m
+[32m2025-02-10 10:18:19 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - Request to Airbyte API failed: 409 Client Error: Conflict for url: http://localhost:8000/api/v1/connections/sync[0m
+[32m2025-02-10 10:18:20 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - Request to Airbyte API failed: 409 Client Error: Conflict for url: http://localhost:8000/api/v1/connections/sync[0m
+[32m2025-02-10 10:18:20 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - Request to Airbyte API failed: 409 Client Error: Conflict for url: http://localhost:8000/api/v1/connections/sync[0m
+[32m2025-02-10 10:18:20 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 30333337-0c1d-4b68-85b1-0ef0cda7de92 - 133086 - airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24 - STEP_FAILURE - Execution of step "airbyte_sync_41066805_df4d_4094_89a1_89cdf5692c24" failed.
+
+dagster._core.definitions.events.Failure: Max retries (3) exceeded with url: http://localhost:8000/api/v1/connections/sync.
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_plan.py", line 245, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 501, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 184, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 190, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 159, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/asset_defs.py", line 223, in _assets
+    ab_output = airbyte.sync_and_poll(connection_id=connection_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 718, in sync_and_poll
+    job_details = self.start_sync(connection_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 690, in start_sync
+    self.make_request(endpoint="/connections/sync", data={"connectionId": connection_id})
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 567, in make_request
+    raise Failure(f"Max retries ({self.request_max_retries}) exceeded with url: {url}.")
+[0m

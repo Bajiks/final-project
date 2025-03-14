@@ -1,0 +1,20 @@
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - LOGS_CAPTURED - Started capturing logs in process (pid: 1437325).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_START - Started execution of step "split_data".
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - LOADED_INPUT - Loaded input "preprocessed_training_data" using input manager "io_manager", from output "preprocessed_training_data" of step "preprocessed_data"
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_INPUT - Got input "preprocessed_training_data" of type "DataFrame". (Type check passed).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mINFO[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - split_data - columns in: Index(['user_id', 'movie_id', 'rating', 'release_date', 'imdb_url',
+       'film_noir', 'active_since', 'Occupation'],
+      dtype='object')
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_OUTPUT - Yielded output "X_train" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - ASSET_MATERIALIZATION - Materialized value X_train.
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - HANDLED_OUTPUT - Handled output "X_train" using IO manager "io_manager"
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_OUTPUT - Yielded output "X_test" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - ASSET_MATERIALIZATION - Materialized value X_test.
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - HANDLED_OUTPUT - Handled output "X_test" using IO manager "io_manager"
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_OUTPUT - Yielded output "y_train" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - ASSET_MATERIALIZATION - Materialized value y_train.
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - HANDLED_OUTPUT - Handled output "y_train" using IO manager "io_manager"
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_OUTPUT - Yielded output "y_test" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - ASSET_MATERIALIZATION - Materialized value y_test.
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - HANDLED_OUTPUT - Handled output "y_test" using IO manager "io_manager"
+[32m2025-03-13 22:56:07 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1437325 - split_data - STEP_SUCCESS - Finished execution of step "split_data" in 815ms.

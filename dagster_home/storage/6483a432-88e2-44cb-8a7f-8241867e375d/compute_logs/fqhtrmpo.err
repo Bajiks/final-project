@@ -1,0 +1,7 @@
+[32m2025-02-10 23:16:41 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - LOGS_CAPTURED - Started capturing logs in process (pid: 60262).
+[32m2025-02-10 23:16:41 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - movies - STEP_START - Started execution of step "movies".
+[32m2025-02-10 23:16:43 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - movies - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2025-02-10 23:16:43 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - movies - Writing file at: /home/bajiks/code/Bajiks/ITBA/final-project/dagster_home/storage/movies using PickledObjectFilesystemIOManager...
+[32m2025-02-10 23:16:43 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - movies - ASSET_MATERIALIZATION - Materialized value movies.
+[32m2025-02-10 23:16:43 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - movies - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-02-10 23:16:43 -0300[0m - dagster - [34mDEBUG[0m - get_data - 6483a432-88e2-44cb-8a7f-8241867e375d - 60262 - movies - STEP_SUCCESS - Finished execution of step "movies" in 1.18s.

@@ -1,0 +1,7 @@
+[32m2025-02-10 23:24:35 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - LOGS_CAPTURED - Started capturing logs in process (pid: 83997).
+[32m2025-02-10 23:24:35 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - scores - STEP_START - Started execution of step "scores".
+[32m2025-02-10 23:24:49 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - scores - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2025-02-10 23:24:49 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - scores - Writing file at: /home/bajiks/code/Bajiks/ITBA/final-project/dagster_home/storage/scores using PickledObjectFilesystemIOManager...
+[32m2025-02-10 23:24:49 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - scores - ASSET_MATERIALIZATION - Materialized value scores.
+[32m2025-02-10 23:24:49 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - scores - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-02-10 23:24:49 -0300[0m - dagster - [34mDEBUG[0m - get_data - 25dd34fb-479d-4dfe-be06-e20a4ecbed02 - 83997 - scores - STEP_SUCCESS - Finished execution of step "scores" in 14.29s.

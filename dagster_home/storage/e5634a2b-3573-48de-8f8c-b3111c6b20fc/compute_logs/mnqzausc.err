@@ -1,0 +1,24 @@
+[32m2025-02-10 01:40:44 -0300[0m - dagster - [34mDEBUG[0m - get_data - e5634a2b-3573-48de-8f8c-b3111c6b20fc - 186180 - LOGS_CAPTURED - Started capturing logs in process (pid: 186180).
+[32m2025-02-10 01:40:44 -0300[0m - dagster - [34mDEBUG[0m - get_data - e5634a2b-3573-48de-8f8c-b3111c6b20fc - 186180 - movies - STEP_START - Started execution of step "movies".
+[32m2025-02-10 01:40:44 -0300[0m - dagster - [34mERROR[0m - [31mget_data - e5634a2b-3573-48de-8f8c-b3111c6b20fc - 186180 - movies - STEP_FAILURE - Execution of step "movies" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "movies"::
+
+AttributeError: 'AssetExecutionContext' object has no attribute 'data_ops_config'
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/assets/core/movies_users.py", line 22, in movies
+    uri = context.data_ops_config["uri"]
+          ^^^^^^^^^^^^^^^^^^^^^^^
+[0m

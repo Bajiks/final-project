@@ -1,0 +1,10 @@
+python: 3.12.4
+dependencies:
+  - pip
+  - poetry
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - mlflow
+  - psycopg2

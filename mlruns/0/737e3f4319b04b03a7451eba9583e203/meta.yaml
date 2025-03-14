@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/737e3f4319b04b03a7451eba9583e203/artifacts
+end_time: 1739152142600
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 737e3f4319b04b03a7451eba9583e203
+run_name: handsome-shad-774
+run_uuid: 737e3f4319b04b03a7451eba9583e203
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739152129465
+status: 4
+tags: []
+user_id: bajiks

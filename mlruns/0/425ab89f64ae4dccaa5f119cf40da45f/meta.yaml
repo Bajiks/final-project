@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/425ab89f64ae4dccaa5f119cf40da45f/artifacts
+end_time: 1739153397151
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 425ab89f64ae4dccaa5f119cf40da45f
+run_name: invincible-skink-164
+run_uuid: 425ab89f64ae4dccaa5f119cf40da45f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739153381179
+status: 4
+tags: []
+user_id: bajiks

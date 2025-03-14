@@ -1,0 +1,121 @@
+[0m19:38:49.496554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8c9c30170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8cb40de20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8c9dbff80>]}
+
+
+============================== 19:38:49.503173 | c20ac91d-7778-4f1b-9f77-6ae8e5fd4f6e ==============================
+[0m19:38:49.503173 [info ] [MainThread]: Running with dbt=1.9.2
+[0m19:38:49.503839 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/home/bajiks/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init db_postgres', 'send_anonymous_usage_stats': 'True'}
+[0m19:38:49.515159 [debug] [MainThread]: Starter project path: /home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/include/starter_project
+[0m19:38:49.518042 [info ] [MainThread]: 
+Your new dbt project "db_postgres" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:38:49.518454 [info ] [MainThread]: Setting up your profile.
+[0m19:40:35.817766 [info ] [MainThread]: Profile db_postgres written to /home/bajiks/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m19:40:35.824324 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 106.41014, "process_in_blocks": "184", "process_kernel_time": 0.189686, "process_mem_max_rss": "95240", "process_out_blocks": "80", "process_user_time": 1.425183}
+[0m19:40:35.825285 [debug] [MainThread]: Command `dbt init` succeeded at 19:40:35.825055 after 106.41 seconds
+[0m19:40:35.826062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8c998e8a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8c998f560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe8c9363560>]}
+[0m19:40:35.826851 [debug] [MainThread]: Flushing usage events
+[0m19:40:36.847079 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:41:09.577161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c7709e9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c7910cb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c77a04170>]}
+
+
+============================== 19:41:09.580893 | 60c305f2-d45d-4813-b4f5-73c5a96ad729 ==============================
+[0m19:41:09.580893 [info ] [MainThread]: Running with dbt=1.9.2
+[0m19:41:09.581480 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/bajiks/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m19:41:09.597499 [info ] [MainThread]: dbt version: 1.9.2
+[0m19:41:09.597991 [info ] [MainThread]: python version: 3.12.4
+[0m19:41:09.598620 [info ] [MainThread]: python path: /home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/bin/python3.12
+[0m19:41:09.599117 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m19:41:09.664440 [info ] [MainThread]: Using profiles dir at /home/bajiks/.dbt
+[0m19:41:09.665010 [info ] [MainThread]: Using profiles.yml file at /home/bajiks/.dbt/profiles.yml
+[0m19:41:09.665449 [info ] [MainThread]: Using dbt_project.yml file at /home/bajiks/code/Bajiks/ITBA/final-project/dbt_project.yml
+[0m19:41:09.665996 [info ] [MainThread]: adapter type: postgres
+[0m19:41:09.666431 [info ] [MainThread]: adapter version: 1.9.0
+[0m19:41:09.668154 [info ] [MainThread]: Configuration:
+[0m19:41:09.670564 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:41:09.671755 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m19:41:09.672242 [info ] [MainThread]: Required dependencies:
+[0m19:41:09.672630 [debug] [MainThread]: Executing "git --help"
+[0m19:41:09.679230 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:41:09.679720 [debug] [MainThread]: STDERR: "b''"
+[0m19:41:09.680075 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:41:09.680450 [info ] [MainThread]: Connection:
+[0m19:41:09.680839 [info ] [MainThread]:   host: localhost
+[0m19:41:09.681261 [info ] [MainThread]:   port: 5432
+[0m19:41:09.681624 [info ] [MainThread]:   user: postgres
+[0m19:41:09.682015 [info ] [MainThread]:   database: mlops
+[0m19:41:09.682432 [info ] [MainThread]:   schema: target
+[0m19:41:09.682974 [info ] [MainThread]:   connect_timeout: 10
+[0m19:41:09.683329 [info ] [MainThread]:   role: None
+[0m19:41:09.683648 [info ] [MainThread]:   search_path: None
+[0m19:41:09.683961 [info ] [MainThread]:   keepalives_idle: 0
+[0m19:41:09.684268 [info ] [MainThread]:   sslmode: None
+[0m19:41:09.684574 [info ] [MainThread]:   sslcert: None
+[0m19:41:09.684914 [info ] [MainThread]:   sslkey: None
+[0m19:41:09.685222 [info ] [MainThread]:   sslrootcert: None
+[0m19:41:09.685531 [info ] [MainThread]:   application_name: dbt
+[0m19:41:09.685842 [info ] [MainThread]:   retries: 1
+[0m19:41:09.686332 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m19:41:09.758156 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m19:41:09.787774 [debug] [MainThread]: Using postgres connection "debug"
+[0m19:41:09.788229 [debug] [MainThread]: On debug: select 1 as id
+[0m19:41:09.788554 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:41:09.812882 [debug] [MainThread]: SQL status: SELECT 1 in 0.024 seconds
+[0m19:41:09.814151 [debug] [MainThread]: On debug: Close
+[0m19:41:09.814661 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:41:09.815075 [info ] [MainThread]: [31m1 check failed:[0m
+[0m19:41:09.815419 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/bajiks/code/Bajiks/ITBA/final-project/dbt_project.yml> not found
+
+[0m19:41:09.816509 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.32587934, "process_in_blocks": "712", "process_kernel_time": 0.173306, "process_mem_max_rss": "103036", "process_out_blocks": "24", "process_user_time": 1.406842}
+[0m19:41:09.817269 [debug] [MainThread]: Command `dbt debug` failed at 19:41:09.817106 after 0.33 seconds
+[0m19:41:09.817655 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m19:41:09.818151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c7714af90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c76ef12e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5c77076210>]}
+[0m19:41:09.818898 [debug] [MainThread]: Flushing usage events
+[0m19:41:10.891780 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:13:04.063800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798eb1ad20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798f6424e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798f0f46b0>]}
+
+
+============================== 12:13:04.073043 | b25f4980-6e4d-4c97-8a55-23a5ca3b8bb0 ==============================
+[0m12:13:04.073043 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:13:04.073811 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/bajiks/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:13:04.074375 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/bajiks/code/Bajiks/ITBA/final-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:13:04.077352 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.11814858, "process_in_blocks": "94104", "process_kernel_time": 1.036617, "process_mem_max_rss": "88760", "process_out_blocks": "16", "process_user_time": 2.083706}
+[0m12:13:04.078040 [debug] [MainThread]: Command `dbt run` failed at 12:13:04.077769 after 0.12 seconds
+[0m12:13:04.078588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798f1a7ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798eb51040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f798f351c70>]}
+[0m12:13:04.079046 [debug] [MainThread]: Flushing usage events
+[0m12:13:05.147288 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:19:21.783982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92974172c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9297b54860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9297417170>]}
+
+
+============================== 21:19:21.789559 | d83c7d41-faac-46cd-a155-11a252c81703 ==============================
+[0m21:19:21.789559 [info ] [MainThread]: Running with dbt=1.9.2
+[0m21:19:21.790338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/home/bajiks/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:19:21.790895 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/bajiks/code/Bajiks/ITBA/final-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:19:21.793053 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.13222466, "process_in_blocks": "32632", "process_kernel_time": 0.422763, "process_mem_max_rss": "90324", "process_out_blocks": "16", "process_user_time": 2.155064}
+[0m21:19:21.793651 [debug] [MainThread]: Command `dbt run` failed at 21:19:21.793527 after 0.13 seconds
+[0m21:19:21.794121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f92978f33b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9297606ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9297416810>]}
+[0m21:19:21.794605 [debug] [MainThread]: Flushing usage events
+[0m21:19:23.159901 [debug] [MainThread]: An error was encountered while trying to flush usage events

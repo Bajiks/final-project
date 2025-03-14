@@ -1,0 +1,121 @@
+[32m2025-03-13 17:16:42 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 2049b812-025a-438b-956b-86eab2e3acd3 - 171072 - LOGS_CAPTURED - Started capturing logs in process (pid: 171072).
+[32m2025-03-13 17:16:42 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 2049b812-025a-438b-956b-86eab2e3acd3 - 171072 - preprocessed_data - STEP_START - Started execution of step "preprocessed_data".
+[32m2025-03-13 17:16:42 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 2049b812-025a-438b-956b-86eab2e3acd3 - 171072 - preprocessed_data - STEP_FAILURE - Execution of step "preprocessed_data" failed.
+
+dagster._core.errors.DagsterExecutionLoadInputError: Error occurred while loading input "scores_users_movies" of step "preprocessed_data"::
+
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/inputs.py", line 621, in _load_input_with_input_manager
+    value = input_manager.load_input(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/resources/__init__.py", line 30, in load_input
+    with engine.connect() as connection:
+         ^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 622, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The above exception was caused by the following exception:
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 622, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

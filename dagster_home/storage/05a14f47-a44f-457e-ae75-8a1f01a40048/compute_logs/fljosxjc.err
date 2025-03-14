@@ -1,0 +1,54 @@
+[32m2025-02-10 10:36:23 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - 169268 - LOGS_CAPTURED - Started capturing logs in process (pid: 169268).
+[32m2025-02-10 10:36:23 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - 169268 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - STEP_START - Started execution of step "airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2".
+[32m2025-02-10 10:36:27 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Job 27 initialized for connection_id=8c1b4c52-e95a-4261-bda2-82af18aebaa2.
+[32m2025-02-10 10:41:59 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: 502 Server Error: Bad Gateway for url: http://localhost:8000/api/v1/jobs/get[0m
+[32m2025-02-10 10:42:00 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: 502 Server Error: Bad Gateway for url: http://localhost:8000/api/v1/jobs/get[0m
+[32m2025-02-10 10:42:00 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:00 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:00 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:01 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:01 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:01 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - Request to Airbyte API failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))[0m
+[32m2025-02-10 10:42:01 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 05a14f47-a44f-457e-ae75-8a1f01a40048 - 169268 - airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2 - STEP_FAILURE - Execution of step "airbyte_sync_8c1b4c52_e95a_4261_bda2_82af18aebaa2" failed.
+
+dagster._core.definitions.events.Failure: Max retries (3) exceeded with url: http://localhost:8000/api/v1/jobs/cancel.
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_plan.py", line 245, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 501, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 184, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 190, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 159, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/asset_defs.py", line 223, in _assets
+    ab_output = airbyte.sync_and_poll(connection_id=connection_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 783, in sync_and_poll
+    self.cancel_job(job_id)
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 570, in cancel_job
+    self.make_request(endpoint="/jobs/cancel", data={"id": job_id})
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 567, in make_request
+    raise Failure(f"Max retries ({self.request_max_retries}) exceeded with url: {url}.")
+
+The above exception occurred during handling of the following exception:
+dagster._core.definitions.events.Failure: Max retries (3) exceeded with url: http://localhost:8000/api/v1/jobs/get.
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 736, in sync_and_poll
+    job_details = self.get_job_status(connection_id, job_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 669, in get_job_status
+    return check.not_none(self.make_request(endpoint="/jobs/get", data={"id": job_id}))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_airbyte/resources.py", line 567, in make_request
+    raise Failure(f"Max retries ({self.request_max_retries}) exceeded with url: {url}.")
+[0m

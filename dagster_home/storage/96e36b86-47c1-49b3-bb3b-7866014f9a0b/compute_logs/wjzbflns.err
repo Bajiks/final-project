@@ -1,0 +1,58 @@
+[32m2025-03-13 17:32:49 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 96e36b86-47c1-49b3-bb3b-7866014f9a0b - 235818 - LOGS_CAPTURED - Started capturing logs in process (pid: 235818).
+[32m2025-03-13 17:32:49 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 96e36b86-47c1-49b3-bb3b-7866014f9a0b - 235818 - split_data - STEP_START - Started execution of step "split_data".
+[32m2025-03-13 17:32:49 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 96e36b86-47c1-49b3-bb3b-7866014f9a0b - 235818 - split_data - STEP_FAILURE - Execution of step "split_data" failed.
+
+dagster._core.errors.DagsterExecutionLoadInputError: Error occurred while loading input "preprocessed_training_data" of step "split_data"::
+
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "target.preprocessed_training_data" does not exist
+LINE 1: SELECT * FROM target.preprocessed_training_data
+                      ^
+
+[SQL: SELECT * FROM target.preprocessed_training_data]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/inputs.py", line 621, in _load_input_with_input_manager
+    value = input_manager.load_input(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/resources/__init__.py", line 26, in load_input
+    return pd.read_sql(query, connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/pandas/io/sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/pandas/io/sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/pandas/io/sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1776, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+
+The above exception was caused by the following exception:
+psycopg2.errors.UndefinedTable: relation "target.preprocessed_training_data" does not exist
+LINE 1: SELECT * FROM target.preprocessed_training_data
+                      ^
+
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+[0m

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1739163653791
+current_stage: None
+description: null
+last_updated_timestamp: 1739163653791
+name: keras_dot_product_model
+run_id: 5170294a621d45908b7fd5b536f9e737
+run_link: null
+source: file:///home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/mlruns/342937375622513856/5170294a621d45908b7fd5b536f9e737/artifacts/keras_dot_product_model
+status: READY
+status_message: null
+storage_location: file:///home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/mlruns/342937375622513856/5170294a621d45908b7fd5b536f9e737/artifacts/keras_dot_product_model
+user_id: null
+version: 1

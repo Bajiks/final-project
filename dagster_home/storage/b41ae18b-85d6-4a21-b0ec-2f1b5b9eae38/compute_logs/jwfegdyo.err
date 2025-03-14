@@ -1,0 +1,21 @@
+[32m2025-03-13 22:56:42 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - LOGS_CAPTURED - Started capturing logs in process (pid: 1440533).
+[32m2025-03-13 22:56:42 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - STEP_START - Started execution of step "log_model".
+[32m2025-03-13 22:56:42 -0300[0m - dagster - [34mINFO[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - log_model - Cargando modelo desde dagster_models/keras_dot_product_model.keras
+W0000 00:00:1741917403.704623 1440533 gpu_device.cc:2344] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenMovies' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenUsers' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[32m2025-03-13 22:56:43 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - LOADED_INPUT - Loaded input "model_trained" using input manager "keras_io_manager", from output "model_trained" of step "model_trained"
+[32m2025-03-13 22:56:43 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - STEP_INPUT - Got input "model_trained" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:43 -0300[0m - dagster - [34mINFO[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - log_model - Tipo de model_trained: <class 'keras.src.models.functional.Functional'>
+2025/03/13 22:56:43 WARNING mlflow.tensorflow: You are saving a TensorFlow Core model or Keras model without a signature. Inference with mlflow.pyfunc.spark_udf() will not work unless the model's pyfunc representation accepts pandas DataFrames as inference inputs.
+[31m2025/03/13 22:56:50 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+Registered model 'keras_dot_product_model' already exists. Creating a new version of this model...
+2025/03/13 22:56:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: keras_dot_product_model, version 9
+Created version '9' of model 'keras_dot_product_model'.
+[32m2025-03-13 22:56:51 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - STEP_OUTPUT - Yielded output "model_stored" of type "Any". (Type check passed).
+[32m2025-03-13 22:56:51 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - ASSET_MATERIALIZATION - Materialized value model_stored.
+[32m2025-03-13 22:56:51 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - HANDLED_OUTPUT - Handled output "model_stored" using IO manager "io_manager"
+[32m2025-03-13 22:56:51 -0300[0m - dagster - [34mDEBUG[0m - airbyte_dbt_training - b41ae18b-85d6-4a21-b0ec-2f1b5b9eae38 - 1440533 - log_model - STEP_SUCCESS - Finished execution of step "log_model" in 8.54s.

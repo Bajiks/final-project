@@ -1,0 +1,27 @@
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - 24251 - LOGS_CAPTURED - Started capturing logs in process (pid: 24251).
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - 24251 - dbt_sources - STEP_START - Started execution of step "dbt_sources".
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - dbt_sources - A dbt subsetted execution is being performed. Overriding default dbt selection arguments `['--select', 'fqn:*']` with arguments: `['db_postgres.scores_users_movies']`.
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mWARNING[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - dbt_sources - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 672, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 364, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/runtime.py", line 79, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/profile.py", line 402, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dbt/config/profile.py", line 359, in from_raw_profiles
+    raise DbtProjectError("Could not find profile named '{}'".format(profile_name))
+dbt.exceptions.DbtProjectError: Runtime Error
+  Could not find profile named 'db_postgres'
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - dbt_sources - Copying `/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/db_postgres/target/partial_parse.msgpack` to `/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/db_postgres/target/dbt_sources-817fbd8-a3a170e/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-02-13 10:16:52 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - dbt_sources - Running dbt command: `dbt run --select db_postgres.scores_users_movies`.
+[32m2025-02-13 10:16:57 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - 24251 - dbt_sources - STEP_OUTPUT - Yielded output "scores_users_movies" of type "Nothing". (Type check passed).
+[32m2025-02-13 10:16:57 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - 24251 - dbt_sources - ASSET_MATERIALIZATION - Materialized value scores_users_movies.
+[32m2025-02-13 10:16:57 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - dbt_sources - Finished dbt command: `dbt run --select db_postgres.scores_users_movies`.
+[32m2025-02-13 10:16:57 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 817fbd87-26bd-418a-b81a-76cbafbc87e7 - 24251 - dbt_sources - STEP_SUCCESS - Finished execution of step "dbt_sources" in 4.78s.

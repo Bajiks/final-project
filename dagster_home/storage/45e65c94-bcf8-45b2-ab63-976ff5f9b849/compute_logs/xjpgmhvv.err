@@ -1,0 +1,21 @@
+[32m2025-02-10 02:13:13 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - LOGS_CAPTURED - Started capturing logs in process (pid: 319073).
+[32m2025-02-10 02:13:13 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - STEP_START - Started execution of step "model_stored".
+[32m2025-02-10 02:13:13 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - model_stored - Loading file from: /home/bajiks/code/Bajiks/ITBA/final-project/dagster_home/storage/model_trained using PickledObjectFilesystemIOManager...
+W0000 00:00:1739164394.596305  319073 gpu_device.cc:2344] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenMovies' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenUsers' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[32m2025-02-10 02:13:14 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - LOADED_INPUT - Loaded input "model_trained" using input manager "io_manager", from output "result" of step "model_trained"
+[32m2025-02-10 02:13:14 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - STEP_INPUT - Got input "model_trained" of type "Any". (Type check passed).
+2025/02/10 02:13:14 WARNING mlflow.tensorflow: You are saving a TensorFlow Core model or Keras model without a signature. Inference with mlflow.pyfunc.spark_udf() will not work unless the model's pyfunc representation accepts pandas DataFrames as inference inputs.
+[31m2025/02/10 02:13:22 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+Successfully registered model 'keras_dot_product_model'.
+2025/02/10 02:13:22 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: keras_dot_product_model, version 1
+Created version '1' of model 'keras_dot_product_model'.
+[32m2025-02-10 02:13:22 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-02-10 02:13:22 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - model_stored - Writing file at: /home/bajiks/code/Bajiks/ITBA/final-project/dagster_home/storage/model_stored using PickledObjectFilesystemIOManager...
+[32m2025-02-10 02:13:22 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - ASSET_MATERIALIZATION - Materialized value model_stored.
+[32m2025-02-10 02:13:22 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-02-10 02:13:22 -0300[0m - dagster - [34mDEBUG[0m - only_training - 45e65c94-bcf8-45b2-ab63-976ff5f9b849 - 319073 - model_stored - STEP_SUCCESS - Finished execution of step "model_stored" in 9.0s.

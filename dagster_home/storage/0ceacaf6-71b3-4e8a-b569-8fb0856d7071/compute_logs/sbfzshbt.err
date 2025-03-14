@@ -1,0 +1,43 @@
+[32m2025-03-13 21:34:33 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - LOGS_CAPTURED - Started capturing logs in process (pid: 1109270).
+[32m2025-03-13 21:34:33 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_START - Started execution of step "model_trained".
+[32m2025-03-13 21:34:33 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - LOADED_INPUT - Loaded input "X_train" using input manager "io_manager", from output "X_train" of step "split_data"
+[32m2025-03-13 21:34:33 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - LOADED_INPUT - Loaded input "movie2Idx" using input manager "io_manager", from output "movie2Idx" of step "preprocessed_data"
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - LOADED_INPUT - Loaded input "user2Idx" using input manager "io_manager", from output "user2Idx" of step "preprocessed_data"
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - LOADED_INPUT - Loaded input "y_train" using input manager "io_manager", from output "y_train" of step "split_data"
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_INPUT - Got input "X_train" of type "Any". (Type check passed).
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_INPUT - Got input "movie2Idx" of type "Any". (Type check passed).
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_INPUT - Got input "user2Idx" of type "Any". (Type check passed).
+[32m2025-03-13 21:34:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_INPUT - Got input "y_train" of type "Any". (Type check passed).
+W0000 00:00:1741912476.507093 1109270 gpu_device.cc:2344] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenMovies' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenUsers' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[32m2025-03-13 21:34:36 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - model_trained - batch_size: 0 - epochs: 0
+2025/03/13 21:34:36 WARNING mlflow.tensorflow: Unrecognized dataset type <class 'list'>. Dataset logging skipped.
+2025/03/13 21:34:36 WARNING mlflow.tensorflow: Failed to infer model signature: could not sample data to infer model signature: Cannot log input example or model signature for input with type <class 'list'>. TensorFlow Keras autologging can only log input examples and model signatures for the following input types: numpy.ndarray, dict[string -> numpy.ndarray], tensorflow.keras.utils.Sequence, and tensorflow.data.Dataset (TensorFlow >= 2.1.0 required)
+2025/03/13 21:34:36 WARNING mlflow.tensorflow: You are saving a TensorFlow Core model or Keras model without a signature. Inference with mlflow.pyfunc.spark_udf() will not work unless the model's pyfunc representation accepts pandas DataFrames as inference inputs.
+[31m2025/03/13 21:34:43 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+[32m2025-03-13 21:34:44 -0300[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 0ceacaf6-71b3-4e8a-b569-8fb0856d7071 - 1109270 - model_trained - STEP_FAILURE - Execution of step "model_trained" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "model_trained"::
+
+KeyError: 'loss'
+
+Stack Trace:
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 480, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/.pyenv/versions/3.12.4/envs/mlops-tp-final/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bajiks/code/Bajiks/ITBA/final-project/recommender_system/recommender_system/assets/recommender/train_model.py", line 98, in model_trained
+    for i, l in enumerate(history.history['loss']):
+                          ~~~~~~~~~~~~~~~^^^^^^^^
+[0m
